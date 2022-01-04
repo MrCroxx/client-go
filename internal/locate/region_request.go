@@ -64,16 +64,6 @@ import (
 	"github.com/tikv/client-go/v2/util"
 )
 
-var tenantID uint64
-
-func StoreTenantID(v uint64) {
-	atomic.StoreUint64(&tenantID, v)
-}
-
-func LoadTenantID() uint64 {
-	return atomic.LoadUint64(&tenantID)
-}
-
 // shuttingDown is a flag to indicate tidb-server is exiting (Ctrl+C signal
 // receved for example). If this flag is set, tikv client should not retry on
 // network error because tidb-server expect tikv client to exit as soon as possible.
@@ -901,7 +891,6 @@ func (s *RegionRequestSender) SendReqCtx(
 	rpcCtx *RPCContext,
 	err error,
 ) {
-	req.Context.TenantId = tenantID
 	if span := opentracing.SpanFromContext(bo.GetCtx()); span != nil && span.Tracer() != nil {
 		span1 := span.Tracer().StartSpan("regionRequest.SendReqCtx", opentracing.ChildOf(span.Context()))
 		defer span1.Finish()

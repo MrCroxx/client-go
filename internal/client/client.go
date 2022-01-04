@@ -255,6 +255,12 @@ func WithSecurity(security config.Security) Opt {
 	}
 }
 
+func WithTenantID(tenantID uint64) Opt {
+	return func(c *RPCClient) {
+		c.tenantID = tenantID
+	}
+}
+
 // RPCClient is RPC client struct.
 // TODO: Add flow control between RPC clients in TiDB ond RPC servers in TiKV.
 // Since we use shared client connection to communicate to the same TiKV, it's possible
@@ -271,6 +277,8 @@ type RPCClient struct {
 	// Implement background cleanup.
 	isClosed    bool
 	dialTimeout time.Duration
+
+	tenantID uint64
 }
 
 // NewRPCClient creates a client that manages connections and rpc calls with tikv-servers.
@@ -369,6 +377,7 @@ func (c *RPCClient) updateTiKVSendReqHistogram(req *tikvrpc.Request, start time.
 
 // SendRequest sends a Request to server and receives Response.
 func (c *RPCClient) SendRequest(ctx context.Context, addr string, req *tikvrpc.Request, timeout time.Duration) (*tikvrpc.Response, error) {
+	req.Context.TenantId = c.tenantID
 	if span := opentracing.SpanFromContext(ctx); span != nil && span.Tracer() != nil {
 		span1 := span.Tracer().StartSpan(fmt.Sprintf("rpcClient.SendRequest, region ID: %d, type: %s", req.RegionId, req.Type), opentracing.ChildOf(span.Context()))
 		defer span1.Finish()
