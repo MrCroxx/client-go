@@ -51,6 +51,10 @@ func WithSecurity(security config.Security) ClientOpt {
 	return client.WithSecurity(security)
 }
 
+func WithTenantID(tenantID uint64) ClientOpt {
+	return client.WithTenantID(tenantID)
+}
+
 // Timeout durations.
 const (
 	ReadTimeoutMedium     = client.ReadTimeoutMedium
