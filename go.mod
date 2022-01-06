@@ -44,4 +44,4 @@ require (
 	honnef.co/go/tools v0.2.0 // indirect
 )
 
-replace github.com/pingcap/kvproto v0.0.0-20211122024046-03abd340988f => github.com/mrcroxx/kvproto v0.0.0-20220103100702-6a20d7f46692
+replace github.com/pingcap/kvproto v0.0.0-20211122024046-03abd340988f => github.com/zhangjinpeng1987/kvproto v0.0.0-20220106035618-6d844a32ccb6

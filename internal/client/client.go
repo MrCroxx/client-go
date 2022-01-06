@@ -255,7 +255,7 @@ func WithSecurity(security config.Security) Opt {
 	}
 }
 
-func WithTenantID(tenantID uint64) Opt {
+func WithTenantID(tenantID uint32) Opt {
 	return func(c *RPCClient) {
 		c.tenantID = tenantID
 	}
@@ -278,7 +278,7 @@ type RPCClient struct {
 	isClosed    bool
 	dialTimeout time.Duration
 
-	tenantID uint64
+	tenantID uint32
 }
 
 // NewRPCClient creates a client that manages connections and rpc calls with tikv-servers.

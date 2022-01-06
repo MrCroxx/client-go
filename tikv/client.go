@@ -51,7 +51,7 @@ func WithSecurity(security config.Security) ClientOpt {
 	return client.WithSecurity(security)
 }
 
-func WithTenantID(tenantID uint64) ClientOpt {
+func WithTenantID(tenantID uint32) ClientOpt {
 	return client.WithTenantID(tenantID)
 }
 
