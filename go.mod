@@ -16,7 +16,7 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pingcap/failpoint v0.0.0-20210316064728-7acb0f0a3dfd
 	github.com/pingcap/goleveldb v0.0.0-20191226122134-f82aafb29989
-	github.com/pingcap/kvproto v0.0.0-20211213085605-3329b3c5404c
+	github.com/pingcap/kvproto v0.0.0-20211224055123-d1a140660c39
 	github.com/pingcap/log v0.0.0-20210906054005-afc726e70354
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.5.1
@@ -24,7 +24,7 @@ require (
 	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
 	github.com/sirupsen/logrus v1.6.0 // indirect
 	github.com/stretchr/testify v1.7.0
-	github.com/tikv/pd v1.1.0-beta.0.20211029083450-e65f0c55b6ae
+	github.com/tikv/pd v1.1.0-beta.0.20211214024235-3c626f28bd32
 	github.com/twmb/murmur3 v1.1.3
 	go.etcd.io/etcd v0.5.0-alpha.5.0.20200824191128-ae9734ed278b
 	go.uber.org/atomic v1.9.0
@@ -39,6 +39,6 @@ require (
 	google.golang.org/grpc v1.27.1
 )
 
-replace github.com/pingcap/kvproto v0.0.0-20211122024046-03abd340988f => github.com/zhangjinpeng1987/kvproto v0.0.0-20220106035618-6d844a32ccb6
+replace github.com/pingcap/kvproto => github.com/zhangjinpeng1987/kvproto v0.0.0-20220106035618-6d844a32ccb6
 
 replace github.com/tikv/pd => github.com/zhangjinpeng1987/pd v1.1.0-beta.0.20220107044820-2876c842ad91
