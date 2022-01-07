@@ -11,14 +11,13 @@ require (
 	github.com/golang/protobuf v1.3.4
 	github.com/golang/snappy v0.0.2-0.20190904063534-ff6b7dc882cf // indirect
 	github.com/google/btree v1.0.0
-	github.com/google/go-cmp v0.5.2 // indirect
 	github.com/google/uuid v1.1.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pingcap/failpoint v0.0.0-20210316064728-7acb0f0a3dfd
 	github.com/pingcap/goleveldb v0.0.0-20191226122134-f82aafb29989
-	github.com/pingcap/kvproto v0.0.0-20211122024046-03abd340988f
-	github.com/pingcap/log v0.0.0-20210625125904-98ed8e2eb1c7
+	github.com/pingcap/kvproto v0.0.0-20211213085605-3329b3c5404c
+	github.com/pingcap/log v0.0.0-20210906054005-afc726e70354
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.5.1
 	github.com/prometheus/client_model v0.2.0
@@ -28,20 +27,18 @@ require (
 	github.com/tikv/pd v1.1.0-beta.0.20211029083450-e65f0c55b6ae
 	github.com/twmb/murmur3 v1.1.3
 	go.etcd.io/etcd v0.5.0-alpha.5.0.20200824191128-ae9734ed278b
-	go.uber.org/atomic v1.7.0
-	go.uber.org/goleak v1.1.10
-	go.uber.org/multierr v1.7.0 // indirect
-	go.uber.org/zap v1.16.0
+	go.uber.org/atomic v1.9.0
+	go.uber.org/goleak v1.1.12
+	go.uber.org/zap v1.19.0
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a // indirect
 	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/text v0.3.6 // indirect
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
-	golang.org/x/tools v0.1.4 // indirect
 	google.golang.org/genproto v0.0.0-20200224152610-e50cd9704f63 // indirect
 	google.golang.org/grpc v1.27.1
-	gopkg.in/yaml.v2 v2.4.0 // indirect
-	honnef.co/go/tools v0.2.0 // indirect
 )
 
 replace github.com/pingcap/kvproto v0.0.0-20211122024046-03abd340988f => github.com/zhangjinpeng1987/kvproto v0.0.0-20220106035618-6d844a32ccb6
+
+replace github.com/tikv/pd => github.com/zhangjinpeng1987/pd v1.1.0-beta.0.20220107044820-2876c842ad91
